@@ -30,32 +30,40 @@ class GameSearchTableViewController: UITableViewController {
 }
 
 
-    extension GameSearchTableViewController: UISearchResultsUpdating {
-      func updateSearchResults(for searchController: UISearchController) {
+extension GameSearchTableViewController: UISearchResultsUpdating, UISearchBarDelegate {
+    func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text else { return }
         print(text)
-      }
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
+    }
       
-      func searchBarIsEmpty() -> Bool {
+    func searchBarIsEmpty() -> Bool {
         // Returns true if the text is empty or nil
         return searchController.searchBar.text?.isEmpty ?? true
-      }
-      
-      func searchControllerSearch(_ searchText: String) {
-        APIController.shared.fetchGenericData(urlString: searchText) { (games : [Game]) in
-            games.forEach({ game in
-                self.gamesArray.append(game)
-                
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let search = searchBar.text, search != "" {
+            APIController.shared.fetchGenericGameData(urlString: "https://api-2445582011268.apicast.io/games/?search=\(search.replacingOccurrences(of: " ", with: "%20"))") { (games: [Game]) in
+                games.forEach({ game in
+                    self.gamesArray.append(game)
                 })
             }
         }
+    }
       
-      func searchControllerSetup() {
+    func searchControllerSearch(_ searchText: String) {
+    }
+      
+    func searchControllerSetup() {
         let search = UISearchController(searchResultsController: nil)
         search.searchResultsUpdater = self
         search.obscuresBackgroundDuringPresentation = false
         search.searchBar.placeholder = "Type something here to search"
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
-      }
+    }
 }

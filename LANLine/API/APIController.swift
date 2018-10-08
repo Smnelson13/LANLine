@@ -12,9 +12,11 @@ class APIController {
   
   static var shared = APIController()
   
-  func fetchGenericData<T: Codable>(urlString: String, completion: @escaping (T) -> ()) {
-    let url = URL(string: urlString)
-    URLSession.shared.dataTask(with: url!) { (data, response, error) in
+  func fetchGenericGameData<T: Codable>(urlString: String, completion: @escaping (T) -> ()) {
+    guard let url = URL(string: urlString) else { return }
+    var request = URLRequest(url: url)
+    request.setValue("4774f5e64252a0b18f62a488293ab738", forHTTPHeaderField: "user-key")
+    URLSession.shared.dataTask(with: url) { (data, response, error) in
         if let error = error {
             print(error)
             return
@@ -25,7 +27,6 @@ class APIController {
             completion(responseObject)
         } catch let jsonError {
             print(jsonError)
-            
         }
         }.resume()
     }
