@@ -11,14 +11,18 @@ import UIKit
 class GameSearchTableViewController: UITableViewController {
     
     var gamesArray = [Game]()
-  //  let searchController = UISearchController(searchResultsController: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         searchControllerSetup()
+        self.tableView.separatorColor = UIColor.clear
     }
 
-    // MARK: - Table view data source
+}
+
+
+// MARK: - Table view data source
+extension GameSearchTableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -26,22 +30,28 @@ class GameSearchTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return gamesArray.count
     }
-
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GameSearchCell", for: indexPath) as! GameSearchTableViewCell
+        
+        return cell
+    }
 }
 
 
+// MARK: - Search functionality
 extension GameSearchTableViewController: UISearchResultsUpdating, UISearchBarDelegate {
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text else { return }
         print(text)
     }
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
-    }
-    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
+        if let searchText = searchBar.text, !searchText.isEmpty {
+            APIController.shared.fetchGenericGameData(urlString: "https://api-2445582011268.apicast.io/games/?search=\(searchText)") { (games: [Game]) in
+                self.gamesArray.append(contentsOf: games)
+            }
+        }
     }
       
     func searchControllerSetup() {

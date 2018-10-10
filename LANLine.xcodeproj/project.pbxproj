@@ -17,6 +17,7 @@
 		90F499F3216AE01A001AEBF1 /* GameSearchBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F499F2216AE01A001AEBF1 /* GameSearchBrain.swift */; };
 		90F499F7216AE0BA001AEBF1 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F499F6216AE0BA001AEBF1 /* APIController.swift */; };
 		90F499FA216AE4AE001AEBF1 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F499F9216AE4AE001AEBF1 /* Game.swift */; };
+		90F499FC216D9399001AEBF1 /* GameSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F499FB216D9399001AEBF1 /* GameSearchTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		90F499F2216AE01A001AEBF1 /* GameSearchBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSearchBrain.swift; sourceTree = "<group>"; };
 		90F499F6216AE0BA001AEBF1 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		90F499F9216AE4AE001AEBF1 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		90F499FB216D9399001AEBF1 /* GameSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSearchTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 		90F499E821659479001AEBF1 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				90F499FB216D9399001AEBF1 /* GameSearchTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			files = (
 				90F499F3216AE01A001AEBF1 /* GameSearchBrain.swift in Sources */,
 				90F499FA216AE4AE001AEBF1 /* Game.swift in Sources */,
+				90F499FC216D9399001AEBF1 /* GameSearchTableViewCell.swift in Sources */,
 				90F499EC216598D0001AEBF1 /* GameSearchTableViewController.swift in Sources */,
 				90F499E4216591FD001AEBF1 /* SplashScreenViewController.swift in Sources */,
 				90F499C4216591A8001AEBF1 /* AppDelegate.swift in Sources */,
