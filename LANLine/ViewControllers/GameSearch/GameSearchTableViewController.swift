@@ -48,9 +48,7 @@ extension GameSearchTableViewController: UISearchResultsUpdating, UISearchBarDel
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let searchText = searchBar.text, !searchText.isEmpty {
-            APIController.shared.fetchGenericGameData(urlString: "https://api-2445582011268.apicast.io/games/?search=\(searchText)") { (games: [Game]) in
-                self.gamesArray.append(contentsOf: games)
-            }
+            APIController.shared.gameid(urlString: "https://api-2445582011268.apicast.io/games/?search=\(searchText.replacingOccurrences(of: " ", with: "%20"))")
         }
     }
       
@@ -59,8 +57,9 @@ extension GameSearchTableViewController: UISearchResultsUpdating, UISearchBarDel
         search.searchResultsUpdater = self
         search.searchBar.delegate = self
         search.obscuresBackgroundDuringPresentation = false
-        search.searchBar.placeholder = "Type something here to search"
+        search.searchBar.placeholder = "Game Search"
         navigationItem.searchController = search
         navigationItem.hidesSearchBarWhenScrolling = false
     }
 }
+
