@@ -48,7 +48,7 @@ extension GameSearchTableViewController: UISearchResultsUpdating, UISearchBarDel
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let searchText = searchBar.text, !searchText.isEmpty {
-            APIController.shared.gameid(urlString: "https://api-2445582011268.apicast.io/games/?search=\(searchText.replacingOccurrences(of: " ", with: "%20"))")
+            
         }
     }
       
