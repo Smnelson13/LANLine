@@ -32,7 +32,7 @@ class APIController {
     }
     
     
-    func getGameSearch(urlString: String) {
+    func getTopLevelCollection(urlString: String) {
         guard let url = URL(string: urlString) else { return }
         var request = URLRequest(url: url)
         request.setValue("4774f5e64252a0b18f62a488293ab738", forHTTPHeaderField: "user-key")

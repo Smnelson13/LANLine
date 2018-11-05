@@ -7,17 +7,25 @@
 //
 
 import UIKit
+import Foundation
+
+protocol GameSearchDelegate: class {
+    func getSearchResults(searchTerm: String)
+}
 
 class GameSearchTableViewController: UITableViewController {
     
     var gamesArray = [Game]()
-
+    let search = UISearchController(searchResultsController: nil)
+    weak var delegate: GameSearchDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        search.searchBar.delegate = self
         searchControllerSetup()
-        self.tableView.separatorColor = UIColor.clear
+        tableViewSetup()
     }
-
+    
 }
 
 
@@ -48,18 +56,25 @@ extension GameSearchTableViewController: UISearchResultsUpdating, UISearchBarDel
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let searchText = searchBar.text, !searchText.isEmpty {
-            
+            self.delegate?.getSearchResults(searchTerm: searchText)
         }
     }
       
     func searchControllerSetup() {
-        let search = UISearchController(searchResultsController: nil)
+        
         search.searchResultsUpdater = self
-        search.searchBar.delegate = self
         search.obscuresBackgroundDuringPresentation = false
         search.searchBar.placeholder = "Game Search"
         navigationItem.searchController = search
         navigationItem.hidesSearchBarWhenScrolling = false
+    }
+}
+
+
+// MARK: - Appearance setup
+extension GameSearchTableViewController {
+    func tableViewSetup() {
+        self.tableView.separatorColor = UIColor.clear
     }
 }
 

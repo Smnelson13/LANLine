@@ -7,5 +7,4 @@
 //
 
 import UIKit
-import UIKit.UIGestureRecognizer
 
