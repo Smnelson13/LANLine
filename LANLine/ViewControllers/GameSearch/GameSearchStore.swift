@@ -17,6 +17,10 @@ final class GameSearchStore: GameSearchDelegate {
     }
     
     func getSearchResults(searchTerm: String) {
-        APIController.shared.getTopLevelCollection(urlString: "https://api-2445582011268.apicast.io/games/?search=\(searchTerm.removeWhitespace)")
+        APIController.shared.getTopLevelCollection(urlString: "https://api-2445582011268.apicast.io/games/?search=\(searchTerm.removeWhitespace)", onSuccess: { results in
+            print(results)
+        }, onError: { error in
+            print(error)
+        })
     }
 }

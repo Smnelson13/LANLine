@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		906327CC219131630052FF76 /* TopLevelDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906327CB219131630052FF76 /* TopLevelDictionary.swift */; };
 		90C7F72E218BC12800CE6699 /* GameSearchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7F72D218BC12800CE6699 /* GameSearchStore.swift */; };
 		90C7F732218BC49500CE6699 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7F731218BC49500CE6699 /* Utils.swift */; };
 		90F499C4216591A8001AEBF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F499C3216591A8001AEBF1 /* AppDelegate.swift */; };
@@ -19,7 +20,6 @@
 		90F499F7216AE0BA001AEBF1 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F499F6216AE0BA001AEBF1 /* APIController.swift */; };
 		90F499FA216AE4AE001AEBF1 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F499F9216AE4AE001AEBF1 /* Game.swift */; };
 		90F499FC216D9399001AEBF1 /* GameSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F499FB216D9399001AEBF1 /* GameSearchTableViewCell.swift */; };
-		90F49A0221815C4B001AEBF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F49A0121815C4B001AEBF1 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		906327CB219131630052FF76 /* TopLevelDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopLevelDictionary.swift; sourceTree = "<group>"; };
 		90C7F72D218BC12800CE6699 /* GameSearchStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSearchStore.swift; sourceTree = "<group>"; };
 		90C7F731218BC49500CE6699 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		90F499C0216591A8001AEBF1 /* LANLine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LANLine.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,7 +50,6 @@
 		90F499F6216AE0BA001AEBF1 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		90F499F9216AE4AE001AEBF1 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		90F499FB216D9399001AEBF1 /* GameSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSearchTableViewCell.swift; sourceTree = "<group>"; };
-		90F49A0121815C4B001AEBF1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				90F499F9216AE4AE001AEBF1 /* Game.swift */,
+				906327CB219131630052FF76 /* TopLevelDictionary.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -175,7 +176,6 @@
 		90F49A0021815C23001AEBF1 /* Extensions+Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				90F49A0121815C4B001AEBF1 /* ViewController.swift */,
 				90C7F731218BC49500CE6699 /* Utils.swift */,
 			);
 			path = "Extensions+Helpers";
@@ -283,13 +283,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				90F499FA216AE4AE001AEBF1 /* Game.swift in Sources */,
-				90F49A0221815C4B001AEBF1 /* ViewController.swift in Sources */,
 				90F499FC216D9399001AEBF1 /* GameSearchTableViewCell.swift in Sources */,
 				90F499EC216598D0001AEBF1 /* GameSearchTableViewController.swift in Sources */,
 				90C7F732218BC49500CE6699 /* Utils.swift in Sources */,
 				90F499E4216591FD001AEBF1 /* SplashScreenViewController.swift in Sources */,
 				90F499C4216591A8001AEBF1 /* AppDelegate.swift in Sources */,
 				90F499F7216AE0BA001AEBF1 /* APIController.swift in Sources */,
+				906327CC219131630052FF76 /* TopLevelDictionary.swift in Sources */,
 				90C7F72E218BC12800CE6699 /* GameSearchStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
