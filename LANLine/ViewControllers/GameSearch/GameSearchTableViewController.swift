@@ -18,8 +18,10 @@ class GameSearchTableViewController: UITableViewController {
     var gamesArray = [Game]()
     let search = UISearchController(searchResultsController: nil)
     weak var delegate: GameSearchDelegate?
+    var gameSearchStore: GameSearchStore?
     
     override func viewDidLoad() {
+        gameSearchStore = GameSearchStore()
         super.viewDidLoad()
         search.searchBar.delegate = self
         searchControllerSetup()
@@ -56,12 +58,11 @@ extension GameSearchTableViewController: UISearchResultsUpdating, UISearchBarDel
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let searchText = searchBar.text, !searchText.isEmpty {
-            self.delegate?.getSearchResults(searchTerm: searchText)
+            gameSearchStore?.getSearchResults(searchTerm: searchText)
         }
     }
       
     func searchControllerSetup() {
-        
         search.searchResultsUpdater = self
         search.obscuresBackgroundDuringPresentation = false
         search.searchBar.placeholder = "Game Search"

@@ -10,6 +10,12 @@ import Foundation
 
 final class GameSearchStore: GameSearchDelegate {
     
+    var searchGameTableView = GameSearchTableViewController()
+    
+    init() {
+        searchGameTableView.delegate = self
+    }
+    
     func getSearchResults(searchTerm: String) {
         APIController.shared.getTopLevelCollection(urlString: "https://api-2445582011268.apicast.io/games/?search=\(searchTerm.removeWhitespace)")
     }
