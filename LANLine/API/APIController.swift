@@ -32,7 +32,7 @@ class APIController {
     }
     
     
-    func getTopLevelCollection(urlString: String, onSuccess: @escaping ([[String: Any]]) -> (), onError: @escaping (Error) -> ()) {
+    func getTopLevelCollection(urlString: String, onSuccess: @escaping ([Game]) -> (), onError: @escaping (Error) -> ()) {
         guard let url = URL(string: urlString) else { return }
         var request = URLRequest(url: url)
         request.setValue("4774f5e64252a0b18f62a488293ab738", forHTTPHeaderField: "user-key")
@@ -42,7 +42,7 @@ class APIController {
             } else if let data = data {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    if let results = json as? [[String: Any]] {
+                    if let results = json as? [Game] {
                         onSuccess(results)
                     }
                 } catch {

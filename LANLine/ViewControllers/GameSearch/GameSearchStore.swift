@@ -17,8 +17,10 @@ final class GameSearchStore: GameSearchDelegate {
     }
     
     func getSearchResults(searchTerm: String) {
-        APIController.shared.getTopLevelCollection(urlString: "https://api-2445582011268.apicast.io/games/?search=\(searchTerm.removeWhitespace)", onSuccess: { results in
-            print(results)
+        APIController.shared.getTopLevelCollection(urlString: "https://api-endpoint.igdb.com/games/?search=\(searchTerm.removeWhitespace())&fields=name,screenshots,popularity&order=popularity:desc", onSuccess: { game in
+            for i in game {
+                print(i.id)
+            }
         }, onError: { error in
             print(error)
         })

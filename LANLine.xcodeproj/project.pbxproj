@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		906327CC219131630052FF76 /* TopLevelDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906327CB219131630052FF76 /* TopLevelDictionary.swift */; };
 		90C7F72E218BC12800CE6699 /* GameSearchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7F72D218BC12800CE6699 /* GameSearchStore.swift */; };
 		90C7F732218BC49500CE6699 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C7F731218BC49500CE6699 /* Utils.swift */; };
 		90F499C4216591A8001AEBF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F499C3216591A8001AEBF1 /* AppDelegate.swift */; };
@@ -33,7 +32,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		906327CB219131630052FF76 /* TopLevelDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopLevelDictionary.swift; sourceTree = "<group>"; };
 		90C7F72D218BC12800CE6699 /* GameSearchStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSearchStore.swift; sourceTree = "<group>"; };
 		90C7F731218BC49500CE6699 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		90F499C0216591A8001AEBF1 /* LANLine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LANLine.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,7 +158,6 @@
 			isa = PBXGroup;
 			children = (
 				90F499F9216AE4AE001AEBF1 /* Game.swift */,
-				906327CB219131630052FF76 /* TopLevelDictionary.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -289,7 +286,6 @@
 				90F499E4216591FD001AEBF1 /* SplashScreenViewController.swift in Sources */,
 				90F499C4216591A8001AEBF1 /* AppDelegate.swift in Sources */,
 				90F499F7216AE0BA001AEBF1 /* APIController.swift in Sources */,
-				906327CC219131630052FF76 /* TopLevelDictionary.swift in Sources */,
 				90C7F72E218BC12800CE6699 /* GameSearchStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

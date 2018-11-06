@@ -8,6 +8,12 @@
 
 import Foundation
 
-struct Game: Codable {
-  let id: Int
+struct Game {
+    let platforms: [Int]?
+    let release_date: Int
+    let id: Int
+    let name: String
+    var coverUrl: String = ""
+    var screenshotUrls = [String]()
+    var summary = ""
 }
